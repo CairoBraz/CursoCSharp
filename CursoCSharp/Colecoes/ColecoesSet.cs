@@ -1,46 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace CursoCSharp.Colecoes
 {
-    public class Produto
-    {
-        public string Nome;
-        public double Preco;
-
-        public Produto(string nome, double preco)
-        {
-            Nome = nome;
-            Preco = preco;
-        }
-    }
-    internal class ColecoesList
-    {
+    internal class ColecoesSet
+    { 
         public static void Executar()
         {
             var livro = new Produto("Caos na guerra", preco: 55.99);
 
-            var carrinho = new List<Produto>();
+            var carrinho = new HashSet<Produto>(); //HashSet é uma estrutura não indexada e não aceita repetição
             carrinho.Add(livro);
 
-            var combo = new List<Produto>()
+            var combo = new HashSet<Produto>()
             {
                 new Produto("A volta dos que não foram.", 11.25),
                 new Produto("As tranças do rei careca.", 11.25),
                 new Produto("As visões do cego.", 11.25),
             };
 
-            carrinho.AddRange(combo);
+            carrinho.UnionWith(combo); //como não é uma estrtura indexada, eu não poso trabalhar com índice
 
             Console.WriteLine(carrinho.Count);
-            carrinho.RemoveAt(3);
+            //carrinho.RemoveAt(3);
 
             foreach (var item in carrinho)
             {
-                Console.Write(carrinho.IndexOf(item));
+                //Console.Write(carrinho.IndexOf(item));
                 Console.WriteLine($" {item.Nome} {item.Preco}");
             }
+            Console.WriteLine(carrinho.Count);
+            carrinho.Add(livro);
+            Console.WriteLine(carrinho.Count);// o set é uma estrutura que não aceita repetição
         }
     }
 }
