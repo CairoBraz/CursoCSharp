@@ -1,0 +1,67 @@
+﻿PILARES DA ORIENTACAO A OBJETO OO
+
+4 PILARES PRINCIPAIS
+
+1 -> ABSTRAÇÃO
+	A IDEIA DA OO É PEGAR O MUNDO REAL E ABSTRAIR PARA DENTRO DO SOFTWARE
+	EXTRAIR DO MUNDO REAL AQUILO QUE É RELEVANTE PARA O MEU SISTEMA
+	-> ID : ALGO QUE IDENTIFIQUE ESSA ABSTRAÇÃO DO MUNDO REAL
+	->ATRIBUTOS
+	->COMPORTAMENTOS
+
+2 -> HERANÇA
+	->REUSO DE CÓDIGO
+		-> COPIAR E COLAR CÓDIGO
+			->FERE O PRINCIPIO DRY(NUNCA COPIE VOCE MESMO)
+
+		-> HERANÇA
+			->SEMPRE PREFIRA COMPOSICAO, POIS COMPOSICAO É MAIS MALEÁVEL QUE HERANÇA
+			É UM(A) -> CACHORRO É UM ANIMA -> HERANÇA
+			TEM UM/ TEM UMA -> UMA ORGANIZACAO TEM UMA OU MAIS EMPREÇA -> COMPOSICAO
+			
+			class Animal
+			{
+				atributos
+				comportamentos
+			}
+
+			Mamifero tem atributos e comportamentos de Animal
+			class Mamífero
+			{
+				atributos
+				comportamentos
+			}
+
+			Humano tem atributos e comportamentos de Mamífero
+			class Humano : Animal
+			{
+				atributos
+				comportamentos
+			}
+
+			UMA CLASSE SÓ PODE HERDAR DE UM ÚNICA CLASSE
+			É POSSÍVEL REDEFINIR OS COMPORTAMENTOS NA CLASSE FILHA DE UMA CLASSE PAI
+
+		-> COMPOSICAO
+			TEM UM/ TEM UMA -> UMA ORGANIZACAO TEM UMA OU MAIS EMPREÇA -> COMPOSICAO
+			class Motor
+			{
+				//...
+			}
+
+			class Porta
+			{
+				//...
+			}
+
+			class Carro
+			{
+				Motor motor get; set;
+				Porta[] portas get; set;
+				int velocidadeMaxima get; set;
+				//...
+			}
+
+3 -> ENCAPSULAMENTO
+
+4 -> POLIMORFISMO
