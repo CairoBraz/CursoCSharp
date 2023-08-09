@@ -63,5 +63,14 @@
 			}
 
 3 -> ENCAPSULAMENTO
+	CAPACIDADE DE ESCONDER PARTE DE UM CÓDIGO PARA TRABALHAR DE FORMA MAIS SEGURA
+	ATRAVÉS DO USO DE MODIFICADORES DE ACESSO
+
+	public -> Todos
+	internal -> Projeto
+	protected <- é transmitido por herança
+	protectd internal -> visivel dentro do projeto ou por herança até mesmo fora do projeot
+	private -> visivel apenas dentro da classe
+
 
 4 -> POLIMORFISMO
