@@ -26,14 +26,14 @@
 			}
 
 			Mamifero tem atributos e comportamentos de Animal
-			class Mamífero
+			class Mamífero : Animal
 			{
 				atributos
 				comportamentos
 			}
 
 			Humano tem atributos e comportamentos de Mamífero
-			class Humano : Animal
+			class Humano : Mamífero
 			{
 				atributos
 				comportamentos
@@ -74,3 +74,44 @@
 
 
 4 -> POLIMORFISMO
+	->ESTÁTICA
+		SOBRECARGA(DOIS MÉTODOS COM O MESMO NOME NO MESMO CONTEXTO)
+		OS PARÂMETROS DEVEM SER DIFERENTES, OU ORDEM DIFERENTES
+		
+		class calc{
+			int    Somar (...){}
+			double Somar (...){}
+		}
+
+	->DINÂMICA
+		
+		class Carro
+		{
+			...
+		}
+
+		class Civic : Carro
+		{
+
+		}
+
+		class Uno : Carro
+		{
+			...
+		}
+
+		Civic carro1 = new Civic();
+		Uno carro2 = new Uno();
+
+		Carro carro3 = new Uno(); ->POLIMORFISMO
+		carro3 = new Civic();
+
+		class Celta : Carro
+		{
+			...
+		}
+
+		carro3 = new Celta();
+
+		void Vender(Celta c){}; ->DESSA FORMA SOMENTE É PERMITIDO PASSAR CELTA PARA O MÉTODO
+		void Vender(Carro c){}; -> DESSA FORMA É POSSÍVEL PASSAR CELTA, UNO E CIVIC
