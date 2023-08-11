@@ -34,7 +34,7 @@ namespace CursoCSharp.OrientacaoObjetos
             return VelocidadeAtual;
         }
 
-        public int Acelerar()
+        public virtual int Acelerar() //operador virtual possibilita que o método Acelerar possa ser sobrescrevido usando o override
         {
             return AlterarVelocidade(5);
         }
@@ -59,6 +59,20 @@ namespace CursoCSharp.OrientacaoObjetos
         {
 
         }
+
+
+        //SOBRESCREVER
+        public override int Acelerar()
+        {
+            return AlterarVelocidade(15);
+        }
+
+        //OCULTAR
+        public new int Frear()
+        {
+            return AlterarVelocidade(-15);
+        }
+
     }
     public class Heranca
     {
@@ -73,11 +87,26 @@ namespace CursoCSharp.OrientacaoObjetos
 
             Console.WriteLine("Ferrai...");
             Ferrari carro2 = new Ferrari();
-            Console.WriteLine(carro2.Acelerar());
-            Console.WriteLine(carro2.Acelerar());
-            Console.WriteLine(carro2.Frear());
+            Console.WriteLine(carro2.Acelerar());   //O método está sobrescrito, vai chamar o comportamento da instância
+            Console.WriteLine(carro2.Acelerar());   //O método está sobrescrito, vai chamar o comportamento da instância
+            Console.WriteLine(carro2.Frear()); // O méotdo está oculto, vai chamar o comportamento do tipo generico
             Console.WriteLine(carro2.Frear());
 
+            Console.WriteLine("Ferrari com tipo Carro");
+            Carro carro3 = new Ferrari(); //Polimorfismo
+            Console.WriteLine(carro3.Acelerar()); //O método está sobrescrito, vai chamar o comportamento da instância
+            Console.WriteLine(carro3.Acelerar());   //O método está sobrescrito, vai chamar o comportamento da instância
+            Console.WriteLine(carro3.Acelerar());
+            Console.WriteLine(carro3.Frear());  // O méotdo está oculto, vai chamar o comportamento do tipo generico
+            Console.WriteLine(carro3.Frear());
+
+            Console.WriteLine("Uno com tipo Carro");
+            carro3 = new Uno();     //Polimorfismo
+            Console.WriteLine(carro3.Acelerar());
+            Console.WriteLine(carro3.Acelerar());
+            Console.WriteLine(carro3.Acelerar());
+            Console.WriteLine(carro3.Frear());
+            Console.WriteLine(carro3.Frear());
         }
     }
 }
