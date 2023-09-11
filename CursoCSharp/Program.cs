@@ -75,6 +75,7 @@ namespace CursoCSharp
                 //Orientação a objetos
                 {"Herança - Orientação a objetos", Heranca.Executar },
                 {"Construtor This - Orientação a objetos", ContrutorThis.Executar },
+                {"Encapsulamento - Orientação a objetos", OrientacaoObjetos.Encapsulamento.Executar },
 
 
 
